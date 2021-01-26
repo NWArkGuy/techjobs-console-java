@@ -62,13 +62,14 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
-                    System.out.println("Search all fields not yet implemented.");
+                    printJobs(JobData.findByValue(searchTerm));
                 } else {
                     printJobs(JobData.findByColumnAndValue(searchField, searchTerm));
                 }
             }
         }
     }
+
 
     // ﻿Returns the key of the selected item from the choices Dictionary
     private static String getUserSelection(String menuHeader, HashMap<String, String> choices) {
@@ -116,21 +117,15 @@ public class TechJobs {
         } else {
             for (HashMap<String, String> list : someJobs) {
                 Map<String, String> map = list;
+                String starLine = "*****";
                 for(String key : map.keySet()) {
-                    System.out.println("*****");
+                    System.out.println(starLine);
                     for (Map.Entry<String, String> entry : list.entrySet()) {
                         System.out.println(entry.getKey() + ": " + entry.getValue());
                     }
-                    System.out.println("*****");
-                    System.out.println();
+                    System.out.println(starLine + "\n");
                 }
             }
         }
-
-
-        //print whole CSV
-        //System.out.println(someJobs);
-
-        //System.out.println("printJobs is not implemented yet");
     }
 }

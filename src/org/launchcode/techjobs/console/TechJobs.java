@@ -118,13 +118,11 @@ public class TechJobs {
             for (HashMap<String, String> list : someJobs) {
                 Map<String, String> map = list;
                 String starLine = "*****";
+                System.out.println(starLine);
                 for(String key : map.keySet()) {
-                    System.out.println(starLine);
-                    for (Map.Entry<String, String> entry : list.entrySet()) {
-                        System.out.println(entry.getKey() + ": " + entry.getValue());
-                    }
-                    System.out.println(starLine + "\n");
+                    System.out.println(key + ": " + map.get(key));
                 }
+                System.out.println(starLine + "\n");
             }
         }
     }
